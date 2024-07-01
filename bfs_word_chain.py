@@ -102,11 +102,11 @@ class Tree:
 
     # BFS iteration
     def __iter__(self):
-        tree = [self.root]
+        nodes = [self.root]
         while tree:
-            node = tree.pop(0)
+            node = nodes.pop(0)
             yield node
-            tree.extend(node.children)
+            nodes.extend(node.children)
 
     def add_node(self, data: str, parent: Node):
         node = Node(data)

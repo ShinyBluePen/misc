@@ -103,13 +103,10 @@ class Tree:
     # BFS iteration
     def __iter__(self):
         tree = [self.root]
-        visited = set()
         while tree:
             node = tree.pop(0)
-            if node.data not in visited:
-                yield node
-                visited.add(node.data)
-                tree.extend(node.children)
+            yield node
+            tree.extend(node.children)
 
     def add_node(self, data: str, parent: Node):
         node = Node(data)

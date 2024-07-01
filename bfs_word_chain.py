@@ -103,7 +103,7 @@ class Tree:
     # BFS iteration
     def __iter__(self):
         nodes = [self.root]
-        while tree:
+        while nodes:
             node = nodes.pop(0)
             yield node
             nodes.extend(node.children)
